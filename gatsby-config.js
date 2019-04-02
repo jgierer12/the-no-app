@@ -1,8 +1,11 @@
 const path = require(`path`);
 
-const lang = process.env.BUILD_LANG || `en`;
-const langPath = path.join(__dirname, `src/${lang}`);
-process.env.BUILD_LANG_PATH = langPath;
+process.env.BUILD_LANG_PATH = path.join(
+  __dirname,
+  `src`,
+  process.env.BUILD_LANG || `en`
+);
+const lang = require(process.env.BUILD_LANG_PATH);
 
 module.exports = {
   plugins: [
@@ -11,20 +14,20 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `clips`,
-        path: `${langPath}/clips`,
+        path: path.join(process.env.BUILD_LANG_PATH, `clips`),
       },
     },
     {
       resolve: `gatsby-plugin-copy-files`,
       options: {
-        source: `${langPath}/clips`,
+        source: path.join(process.env.BUILD_LANG_PATH, `clips`),
         destination: `/clips`,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `the-no-app`,
+        name: lang.appName,
         start_url: `/`,
         background_color: `#fa9d97`,
         theme_color: `#953131`,
