@@ -1,0 +1,83 @@
+html {
+  font-family: "Inter UI", sans-serif;
+  font-size: 28px;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter UI var", sans-serif;
+  }
+}
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+html,
+body,
+#___gatsby,
+#___gatsby > div,
+main {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #353535;
+  background: #f2f2f2;
+  padding: 1rem;
+}
+main > * + * {
+  margin-top: 1rem;
+}
+
+input,
+button {
+  border: 2px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  background: #fff;
+  width: 100%;
+  max-width: 900px;
+}
+input::placeholder {
+  color: #8c8c8c;
+}
+
+button {
+  background: #fa9d97;
+  color: #953131;
+  border-color: transparent;
+  transition: transform 0.2s ease-in-out;
+}
+button:hover {
+  transform: translateY(-2px);
+}
+
+.volume-icon {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  margin: 0;
+  font-size: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 700px) {
+  .volume-icon {
+    font-size: 0.75rem;
+  }
+}
+
+.volume-icon svg {
+  width: 1rem;
+  margin-right: 0.25rem;
+}

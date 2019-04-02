@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "preserve": "run-s build",
+    "serve": "gatsby serve",
+    "test": "run-s lint",
+    "format": "run-p --print-label format:*",
+    "format:js": "run-s \"_eslint -- --fix\"",
+    "format:other": "run-s \"_prettier -- --write\"",
+    "lint": "run-p --print-label --continue-on-error lint:*",
+    "lint:js": "run-s _eslint",
+    "lint:other": "run-s _prettier",
+    "_eslint": "eslint --color --ignore-path .gitignore \"**/*.js\"",
+    "_prettier": "prettier --check --ignore-path .gitignore \"**/*.{json,md,mdx,yml,graphql}\""
+  },
+  "dependencies": {
+    "destyle.css": "^1.0.5",
+    "gatsby": "^2.3.3",
+    "gatsby-plugin-copy-files": "^1.0.1",
+    "gatsby-plugin-manifest": "^2.0.25",
+    "gatsby-plugin-netlify": "^2.0.13",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-source-filesystem": "^2.0.28",
+    "preval.macro": "^3.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "typeface-inter": "^3.2.0"
+  },
+  "devDependencies": {
+    "@jgierer12/js-configs": "^0.1.1",
+    "deepmerge": "^3.2.0",
+    "eslint": "^5.16.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.4"
+  }
+}
