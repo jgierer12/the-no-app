@@ -1,5 +1,4 @@
-module.exports = require(`deepmerge`)(
-  require(`@jgierer12/js-configs/eslint`),
+module.exports = require(`@jgierer12/merge-deep`)(
   require(`@jgierer12/js-configs/eslint/react`),
   {
     globals: {

@@ -33,9 +33,9 @@
     "typeface-inter": "^3.2.0"
   },
   "devDependencies": {
-    "@jgierer12/js-configs": "^0.1.1",
-    "deepmerge": "^3.2.0",
-    "eslint": "^5.16.0",
+    "@jgierer12/js-configs": "^1.0.1",
+    "@jgierer12/merge-deep": "^3.1.0",
+    "eslint": "^6.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
     "react-shallow-context": "^1.0.1"

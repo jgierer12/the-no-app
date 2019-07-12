@@ -11,7 +11,7 @@ export const Player = () => {
   React.useEffect(() => {
     if (!hasCurrentClip) return;
     mediaElement.current.play();
-  }, [currentClip]);
+  }, [currentClip, hasCurrentClip]);
 
   return (
     <>
